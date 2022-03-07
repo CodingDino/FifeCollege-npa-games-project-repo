@@ -29,7 +29,7 @@ running = True
 playerImg = pygame.image.load('assets/graphics/chicken.png')
 playerImg.convert()
 playerRect = playerImg.get_rect()
-playerRect.center = 250, 250
+playerRect.center = 0, 0
 # --------------------------------------
 
 
@@ -46,13 +46,21 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerRect.centerx -= 10
+            if event.key == pygame.K_RIGHT:
+                playerRect.centerx += 10
+            if event.key == pygame.K_UP:
+                playerRect.centery -= 10
+            if event.key == pygame.K_DOWN:
+                playerRect.centery += 10
     # ----------------------------------
 
     
     # ----------------------------------
     # Update
     # ----------------------------------
-    
     # ----------------------------------
 
     
