@@ -24,6 +24,12 @@ screen = pygame.display.set_mode([500, 500])
 
 # Set up some variables to use later in our game
 running = True
+
+# Set up player
+playerImg = pygame.image.load('assets/graphics/chicken.png')
+playerImg.convert()
+playerRect = playerImg.get_rect()
+playerRect.center = 250, 250
 # --------------------------------------
 
 
@@ -56,8 +62,9 @@ while running:
     # Fill the background with a colour
     screen.fill((255, 255, 255))
 
-    # Draw a circle
-    pygame.draw.circle(screen, (0, 0, 255), (250,250), 75)
+    # Draw Everything
+    screen.blit(playerImg, playerRect)
+    
 
     # Flip the display
     pygame.display.flip()
